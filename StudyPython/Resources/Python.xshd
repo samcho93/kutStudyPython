@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SyntaxDefinition name="Python" extensions=".py;.pyw"
+                  xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+  <Color name="Comment" foreground="#008000" fontStyle="italic"/>
+  <Color name="String" foreground="#A31515"/>
+  <Color name="Keyword" foreground="#0000FF" fontWeight="bold"/>
+  <Color name="BuiltinFunction" foreground="#8B008B"/>
+  <Color name="Number" foreground="#FF4500"/>
+  <Color name="Decorator" foreground="#CC7832"/>
+  <Color name="ClassName" foreground="#2B91AF"/>
+  <Color name="FunctionDef" foreground="#795E26"/>
+  <Color name="Operator" foreground="#333333"/>
+  <Color name="Boolean" foreground="#0000FF" fontWeight="bold"/>
+  <Color name="Self" foreground="#D2691E" fontStyle="italic"/>
+
+  <RuleSet ignoreCase="false">
+    <!-- 주석 -->
+    <Span color="Comment">
+      <Begin>\#</Begin>
+    </Span>
+
+    <!-- 삼중 따옴표 문자열 (큰따옴표) -->
+    <Span color="String" multiline="true">
+      <Begin>"""</Begin>
+      <End>"""</End>
+    </Span>
+
+    <!-- 삼중 따옴표 문자열 (작은따옴표) -->
+    <Span color="String" multiline="true">
+      <Begin>'''</Begin>
+      <End>'''</End>
+    </Span>
+
+    <!-- 문자열 (큰따옴표) -->
+    <Span color="String">
+      <Begin>"</Begin>
+      <End>"</End>
+      <RuleSet>
+        <Span begin="\\" end="."/>
+      </RuleSet>
+    </Span>
+
+    <!-- 문자열 (작은따옴표) -->
+    <Span color="String">
+      <Begin>'</Begin>
+      <End>'</End>
+      <RuleSet>
+        <Span begin="\\" end="."/>
+      </RuleSet>
+    </Span>
+
+    <!-- 데코레이터 -->
+    <Rule color="Decorator">@\w+</Rule>
+
+    <!-- 숫자 -->
+    <Rule color="Number">\b0[xX][0-9a-fA-F]+\b</Rule>
+    <Rule color="Number">\b0[oO][0-7]+\b</Rule>
+    <Rule color="Number">\b0[bB][01]+\b</Rule>
+    <Rule color="Number">\b[0-9]+\.?[0-9]*([eE][+-]?[0-9]+)?\b</Rule>
+
+    <!-- self -->
+    <Keywords color="Self">
+      <Word>self</Word>
+      <Word>cls</Word>
+    </Keywords>
+
+    <!-- Boolean / None -->
+    <Keywords color="Boolean">
+      <Word>True</Word>
+      <Word>False</Word>
+      <Word>None</Word>
+    </Keywords>
+
+    <!-- 키워드 -->
+    <Keywords color="Keyword">
+      <Word>and</Word>
+      <Word>as</Word>
+      <Word>assert</Word>
+      <Word>async</Word>
+      <Word>await</Word>
+      <Word>break</Word>
+      <Word>class</Word>
+      <Word>continue</Word>
+      <Word>def</Word>
+      <Word>del</Word>
+      <Word>elif</Word>
+      <Word>else</Word>
+      <Word>except</Word>
+      <Word>finally</Word>
+      <Word>for</Word>
+      <Word>from</Word>
+      <Word>global</Word>
+      <Word>if</Word>
+      <Word>import</Word>
+      <Word>in</Word>
+      <Word>is</Word>
+      <Word>lambda</Word>
+      <Word>nonlocal</Word>
+      <Word>not</Word>
+      <Word>or</Word>
+      <Word>pass</Word>
+      <Word>raise</Word>
+      <Word>return</Word>
+      <Word>try</Word>
+      <Word>while</Word>
+      <Word>with</Word>
+      <Word>yield</Word>
+    </Keywords>
+
+    <!-- 내장 함수 -->
+    <Keywords color="BuiltinFunction">
+      <Word>print</Word>
+      <Word>input</Word>
+      <Word>len</Word>
+      <Word>range</Word>
+      <Word>type</Word>
+      <Word>int</Word>
+      <Word>float</Word>
+      <Word>str</Word>
+      <Word>list</Word>
+      <Word>dict</Word>
+      <Word>tuple</Word>
+      <Word>set</Word>
+      <Word>bool</Word>
+      <Word>abs</Word>
+      <Word>max</Word>
+      <Word>min</Word>
+      <Word>sum</Word>
+      <Word>sorted</Word>
+      <Word>reversed</Word>
+      <Word>enumerate</Word>
+      <Word>zip</Word>
+      <Word>map</Word>
+      <Word>filter</Word>
+      <Word>open</Word>
+      <Word>isinstance</Word>
+      <Word>issubclass</Word>
+      <Word>hasattr</Word>
+      <Word>getattr</Word>
+      <Word>setattr</Word>
+      <Word>super</Word>
+      <Word>property</Word>
+      <Word>staticmethod</Word>
+      <Word>classmethod</Word>
+      <Word>round</Word>
+      <Word>pow</Word>
+      <Word>hex</Word>
+      <Word>oct</Word>
+      <Word>bin</Word>
+      <Word>ord</Word>
+      <Word>chr</Word>
+      <Word>format</Word>
+      <Word>repr</Word>
+      <Word>id</Word>
+      <Word>hash</Word>
+      <Word>dir</Word>
+      <Word>vars</Word>
+      <Word>globals</Word>
+      <Word>locals</Word>
+      <Word>callable</Word>
+      <Word>iter</Word>
+      <Word>next</Word>
+      <Word>all</Word>
+      <Word>any</Word>
+      <Word>eval</Word>
+      <Word>exec</Word>
+      <Word>compile</Word>
+      <Word>__import__</Word>
+    </Keywords>
+  </RuleSet>
+</SyntaxDefinition>

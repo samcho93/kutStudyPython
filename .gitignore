@@ -1,0 +1,14 @@
+bin/
+obj/
+publish/
+.vs/
+*.user
+*.zip
+temp/
+image/
+kutPython/
+kutStudyPython/
+nul
+pat.txt
+claude.md
+CLAUDE.md
